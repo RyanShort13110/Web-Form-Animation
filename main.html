@@ -1,0 +1,50 @@
+<!-- Main animation style -->
+
+<style>
+div.form-container {
+  transition: transform 0.3s ease;
+}
+
+div.form-container.shrink-effect {
+  transform: scale(0.95); /* Shrink to 95% */
+}
+</style>
+
+
+<!-- Animation script -->
+
+<script>
+    function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
+
+document.querySelectorAll('.demo-landing-page').forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const form = document.querySelector('.form-container');
+    if (form) {
+      const runAnimation = () => {
+        form.classList.add('shrink-effect');
+        setTimeout(() => {
+          form.classList.remove('shrink-effect');
+        }, 300); // animation duration
+      };
+
+      if (isElementInViewport(form)) {
+        // If already in view, animate immediately
+        runAnimation();
+      } else {
+        // Scroll first, then animate after a short delay
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(runAnimation, 700); // Adjust if scroll takes longer
+      }
+    }
+  });
+});
+
+</script>
