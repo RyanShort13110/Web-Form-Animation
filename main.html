@@ -14,7 +14,7 @@ div.form-container.shrink-effect {
 <!-- Animation script -->
 
 <script>
-    function isElementInViewport(el) {
+function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
     rect.top >= 0 &&
@@ -22,7 +22,7 @@ div.form-container.shrink-effect {
   );
 }
 
-document.querySelectorAll('.demo-landing-page').forEach(button => {
+document.querySelectorAll('.demo-landing-page a').forEach(button => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
 
