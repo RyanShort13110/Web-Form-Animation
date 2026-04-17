@@ -25,13 +25,13 @@ function isElementInViewport(el) {
 document.querySelectorAll('.demo-landing-page a').forEach(button => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
-
     const form = document.querySelector('.form-container');
     if (form) {
       const runAnimation = () => {
         form.classList.add('shrink-effect');
         setTimeout(() => {
           form.classList.remove('shrink-effect');
+		      // document.getElementById("FirstName").focus(); // Optional focus on 'First Name' field
         }, 300); // animation duration
       };
 
