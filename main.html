@@ -32,8 +32,9 @@ document.querySelectorAll('.demo-landing-page a').forEach(button => {
         setTimeout(() => {
           form.classList.remove('shrink-effect');
 		      // document.getElementById("FirstName").focus(); // Optional focus on 'First Name' field
-          document.querySelectorAll('.form-container input')[0].focus(); // Optional focus on first field of form
-        }, 300); // animation duration
+
+          document.querySelectorAll('.form-container input')[0].focus(); // Optional focus on first field of form, comment out if not needed
+        }, 300); // animation duration, adjust if needed
       };
 
       if (isElementInViewport(form)) {
