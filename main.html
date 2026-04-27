@@ -22,8 +22,8 @@ function isElementInViewport(el) {
   );
 }
 
-document.querySelectorAll('.demo-landing-page a').forEach(button => {
-  button.addEventListener('click', (event) => {
+document.querySelectorAll('.demo-landing-page a').forEach(link => {
+  link.addEventListener('click', (event) => {
     event.preventDefault();
     const form = document.querySelector('.form-container');
     if (form) {
